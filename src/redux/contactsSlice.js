@@ -27,6 +27,7 @@ const slice = createSlice({
       })
       .addCase(addContact.fulfilled, (state, action) => {
         state.contacts.items.push(action.payload);
+        state.contacts.loading = false;
       })
       .addMatcher(
         isAnyOf(
